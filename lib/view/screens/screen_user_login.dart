@@ -129,7 +129,9 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                       padding: EdgeInsets.symmetric(vertical: 8.sp),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.sp),
-                          color: Colors.black),
+                          color: Colors.black.withOpacity(0.9)
+
+                      ),
                       child: Text(
                         'Login',
                         style: TextStyle(
