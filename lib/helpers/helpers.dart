@@ -7,9 +7,21 @@ import 'package:location/location.dart' as loc;
 
 CollectionReference userref = FirebaseFirestore.instance.collection('users');
 CollectionReference postref=FirebaseFirestore.instance.collection('posts');
-
 String registraiontokenformessaging='';
+List<String> ChoicesofMenu=["Fund","SignOut","SignIn"];
 
+
+void choiceAction(String choice){
+  if(choice == "Fund"){
+    print('Fund');
+  }
+  else if(choice == "SignOut"){
+    print('SignOut');
+  }
+  else if(choice == 'SignIn'){
+    print('SignIn');
+  }
+}
 
 
 

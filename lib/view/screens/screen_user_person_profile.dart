@@ -33,7 +33,16 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
           Get.back();
         },),
         actions: [
-          Icon(Icons.more_vert,color: Colors.white,),
+          PopupMenuButton(
+            onSelected: choiceAction,
+              itemBuilder: (BuildContext context){
+            return ChoicesofMenu.map((e){
+              return PopupMenuItem<String>(
+                child: Text(e),
+                value: e,);
+            }).toList();
+          }),
+          // Icon(Icons.more_vert,color: Colors.white,),
           SizedBox(width: 8,)
         ],
       ),
@@ -47,7 +56,7 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
             model.User user=snapshot.data;
             return Column(
               children: [
-                Container(padding: EdgeInsets.only(left: 15,right: 20),
+                Container(padding: EdgeInsets.only(left: 15,right: 20,top: 15),
                   height: Get.height * .35,
                   width: Get.width,
                   decoration: BoxDecoration(
@@ -76,7 +85,7 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
                             children: [
                               Text(user.Name,style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                               SizedBox(height: 4,),
-                              Text('Doctor,  Student❤',style: TextStyle(color: Colors.white),),
+                              Text('Doctor,  Student ❤',style: TextStyle(color: Colors.white),),
                             ],
                           )
                         ],

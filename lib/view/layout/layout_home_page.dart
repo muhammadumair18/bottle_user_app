@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/posts.dart';
 import 'package:bottle_user_app/model/user.dart' as model;
@@ -86,7 +85,11 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
 
                     // bool value=await examplecheckPermissionStatus();
                     // print(value);
-                    await callOnFcmApiSendPushNotifications(title: 'Hello', body: 'Body');
+                    // await callOnFcmApiSendPushNotifications(title: 'Hello', body: 'Body');
+                    Get.snackbar(
+                        'Notifications', 'There are no notifications available',
+                        backgroundColor: Colors.black54,
+                        colorText: Colors.white);
                   },
                   child: Icon(
                     Icons.notifications,
@@ -156,18 +159,23 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
               StreamBuilder<QuerySnapshot>(
                   stream: postref.snapshots(),
                   builder: (context, snapshots) {
-
-                    if(snapshots.connectionState == ConnectionState.waiting){
-                      return Center(child: CircularProgressIndicator.adaptive(),);
+                    if (snapshots.connectionState == ConnectionState.waiting) {
+                      return Center(
+                        child: CircularProgressIndicator.adaptive(),
+                      );
                     }
-                    if(snapshots.hasData){
+                    if (snapshots.hasData) {
                       print('snapshots has data -----------------------------');
                       var data = snapshots.data!.docs
                           .map((e) =>
-                          posts.fromMap(e.data() as Map<String, dynamic>))
+                              posts.fromMap(e.data() as Map<String, dynamic>))
                           .toList();
-                      if(data.length==0){
-                        return Center(child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 20),));
+                      if (data.length == 0) {
+                        return Center(
+                            child: Text(
+                          'No Data Available',
+                          style: TextStyle(color: Colors.red, fontSize: 20),
+                        ));
                       }
                       return ListView.builder(
                           physics: ScrollPhysics(),
@@ -183,7 +191,12 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                             );
                           });
                     }
-                    return Center(child: Text('No Snapshots Data Available',style: TextStyle(color: Colors.black,fontSize: 12),),);
+                    return Center(
+                      child: Text(
+                        'No Snapshots Data Available',
+                        style: TextStyle(color: Colors.black, fontSize: 12),
+                      ),
+                    );
                   })
             ],
           ),
@@ -192,18 +205,15 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
     );
   }
 
-
-
-  Future<Position> _getCurrentPosition()async{
-    await Geolocator.requestPermission().then((value) {
-
-    }).onError((error, stackTrace) {
+  Future<Position> _getCurrentPosition() async {
+    await Geolocator.requestPermission()
+        .then((value) {})
+        .onError((error, stackTrace) {
       Get.snackbar('Location Error', 'The Location permission is canceled');
     });
 
     return Geolocator.getCurrentPosition();
   }
-
 
   Future<bool> callOnFcmApiSendPushNotifications(
       {required String title, required String body}) async {
@@ -216,13 +226,15 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
         "id": "1",
         "status": "done"
       },
-      "to": "ePyhQLo9TdyyuDXWDgP6vx:APA91bEP_B7Ltox0xEdOMiMTwGa7GPTu2xfFrPKP1sEyELO8W9pGJRqyEJSNp5ak0MnMZAr5rDp0MXbKE5sjJj0Yd0VFiyMBn7gAehwlMcZMsf9xwlwJMKv1bRqCe8ibcxAOAm8SDPd9"
+      "to":
+          "ePyhQLo9TdyyuDXWDgP6vx:APA91bEP_B7Ltox0xEdOMiMTwGa7GPTu2xfFrPKP1sEyELO8W9pGJRqyEJSNp5ak0MnMZAr5rDp0MXbKE5sjJj0Yd0VFiyMBn7gAehwlMcZMsf9xwlwJMKv1bRqCe8ibcxAOAm8SDPd9"
     };
 
     final headers = {
       'content-type': 'application/json',
       'Authorization':
-      'key=AAAAUfx6dOY:APA91bFxxHCGO0VgcPk4G3WNz1K0QZkMhlufgOQTEzElGDp58CK8lcbDh9v7VodMc2XSbsYT0u10BIQfRx-jSmfhbX-wbe7P0gEZWpcUDaGx4Cq1bFQfymWFu6wY3ixmwZx_qSNYk_2K' // 'key=YOUR_SERVER_KEY'
+          'key=AAAAUfx6dOY:APA91bFxxHCGO0VgcPk4G3WNz1K0QZkMhlufgOQTEzElGDp58CK8lcbDh9v7VodMc2XSbsYT0u10BIQfRx-jSmfhbX-wbe7P0gEZWpcUDaGx4Cq1bFQfymWFu6wY3ixmwZx_qSNYk_2K'
+      // 'key=YOUR_SERVER_KEY'
     };
 
     final response = await http.post(Uri.parse(postUrl),
@@ -240,11 +252,4 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
       return false;
     }
   }
-
 }
-
-
-
-
-
-
