@@ -50,7 +50,7 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
         future: getUserData(widget.personID),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if(snapshot.connectionState==ConnectionState.waiting){
-            return Center(child: CircularProgressIndicator(color: Colors.red,));
+            return Center(child: CircularProgressIndicator(color: Colors.blue,));
           }
           if(snapshot.hasData){
             model.User user=snapshot.data;
