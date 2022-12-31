@@ -85,7 +85,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
 
                     // bool value=await examplecheckPermissionStatus();
                     // print(value);
-                    // await callOnFcmApiSendPushNotifications(title: 'Hello', body: 'Body');
+                    await callOnFcmApiSendPushNotifications(title: 'Hello', body: 'Body');
                     Get.snackbar(
                         'Notifications', 'There are no notifications available',
                         backgroundColor: Colors.black54,
@@ -219,7 +219,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
       {required String title, required String body}) async {
     const postUrl = 'https://fcm.googleapis.com/fcm/send';
     final data = {
-      "notification": {"body": "this is a body", "title": "this is a title"},
+      "notification": {"body": "${title}", "title": "${body}"},
       "priority": "high",
       "data": {
         "click_action": "FLUTTER_NOTIFICATION_CLICK",
@@ -227,7 +227,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
         "status": "done"
       },
       "to":
-          "ePyhQLo9TdyyuDXWDgP6vx:APA91bEP_B7Ltox0xEdOMiMTwGa7GPTu2xfFrPKP1sEyELO8W9pGJRqyEJSNp5ak0MnMZAr5rDp0MXbKE5sjJj0Yd0VFiyMBn7gAehwlMcZMsf9xwlwJMKv1bRqCe8ibcxAOAm8SDPd9"
+          "ejYYWxNmRPCBPr2D0yEjcN:APA91bEuueI0khJ1YI99pd_IdM_vOeRz6FQ_taouNW49g0raY638z58mdCVeeA8mtb7o_IssdXNI_USre5Q4VO9ldyyJERyXVUHw7I71TvM9kIRfTSRYDmSp00uUNHOuPUe8qmmd06HB"
     };
 
     final headers = {
