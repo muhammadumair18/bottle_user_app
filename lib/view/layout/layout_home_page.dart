@@ -171,11 +171,15 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                               posts.fromMap(e.data() as Map<String, dynamic>))
                           .toList();
                       if (data.length == 0) {
-                        return Center(
-                            child: Text(
-                          'No Data Available',
-                          style: TextStyle(color: Colors.red, fontSize: 20),
-                        ));
+                        return Container(
+                          width: Get.width,
+                          height: Get.height * .2,
+                          child: Center(
+                              child: Text(
+                            'No Data Available',
+                            style: TextStyle(color: Colors.red, fontSize: 20),
+                          )),
+                        );
                       }
                       return ListView.builder(
                           physics: ScrollPhysics(),
