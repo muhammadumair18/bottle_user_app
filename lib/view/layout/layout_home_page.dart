@@ -174,6 +174,9 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                         return Container(
                           width: Get.width,
                           height: Get.height * .2,
+                          decoration: BoxDecoration(
+
+                          ),
                           child: Center(
                               child: Text(
                             'No Data Available',
