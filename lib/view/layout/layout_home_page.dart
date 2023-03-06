@@ -175,7 +175,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                           width: Get.width,
                           height: Get.height * .2,
                           decoration: BoxDecoration(
-
+                            
                           ),
                           child: Center(
                               child: Text(
