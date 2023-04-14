@@ -94,6 +94,7 @@ class ScreenUserAbout extends StatelessWidget {
                     children: [
                       Icon(Icons.email,size: Get.height * .05,),
                       SizedBox(width: 5,),
+
                       Text('contact@sharebpttel.com',style: TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 18),)
                     ],
                   ),

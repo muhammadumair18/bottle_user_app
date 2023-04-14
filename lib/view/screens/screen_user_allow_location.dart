@@ -113,6 +113,7 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                         color: Colors.white),
                     child: Text(
                       LocaleKeys.dontallow.tr,
+
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 14.sp,

@@ -127,6 +127,7 @@ class _LayoutProfilePageState extends State<LayoutProfilePage> {
                     // print("checkpermissionfunction     ${checki}");
                     // print('Hello');
                   },
+
                   child: Container(
               height: Get.height * .12,
               width: Get.width * .30,

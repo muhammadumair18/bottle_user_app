@@ -150,6 +150,7 @@ class _ScreenUserNewPostDescriptionState
                 style: TextStyle(color: Colors.black, fontSize: 15),
               ),
               InkWell(
+
                   onTap: () async {
                     await checkingPath?.delete();
                     print(checkingPath?.path);

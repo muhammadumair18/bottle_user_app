@@ -41,6 +41,7 @@ class _ItemVideoViewState extends State<ItemVideoView> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       color: Colors.blueGrey,
       // height: Get.height,
       // width: Get.width,
