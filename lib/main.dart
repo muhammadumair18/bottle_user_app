@@ -147,6 +147,7 @@ class _MyAppState extends State<MyApp> {
     return Sizer(builder: (context, orientation, deviceType) {
       return GetMaterialApp(
         translationsKeys: AppTranslation.translations,
+
         locale: Locale('ur'),
         debugShowCheckedModeBanner: false,
         home:Directionality(
