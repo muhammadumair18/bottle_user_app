@@ -79,7 +79,7 @@ class ScreenUserSplash extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.error_outline,color: Colors.white,),
-                    Text(' You must be 22 to use this app',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 15),),
+                    Text(' You must be 22 years old to use this app',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 15),),
                     SizedBox(height: 4.sp,)
                   ],
                 )

@@ -46,7 +46,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                     ),
                   ),
                   Text(
-                    'Share Bottel',
+                    'Share Bottle',
                     style: TextStyle(
                         color: Color(0xff767676),
                         fontSize: 28.sp,
@@ -86,7 +86,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                       },
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(fillColor: Colors.white,filled: true,
-                          hintText: "Enter Number",
+                          hintText: "Enter phone Number",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(32.0)),
                           ),

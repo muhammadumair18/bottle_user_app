@@ -85,7 +85,7 @@ class ScreenUserAbout extends StatelessWidget {
                     children: [
                       Icon(Icons.circle,size: Get.height * .05,),
                       SizedBox(width: 5,),
-                      Text('ww.sharebottel.com',style: TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 18),)
+                      Text('www.sharebottel.com',style: TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 18),)
                     ],
                   ),
                   SizedBox(height: 8,),

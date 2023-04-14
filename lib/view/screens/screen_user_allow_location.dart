@@ -111,7 +111,7 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                         border: Border.all(width: 1.sp, color: Colors.black),
                         color: Colors.white),
                     child: Text(
-                      'Dont Allow',
+                      'Don\'t Allow',
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 14.sp,

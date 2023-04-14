@@ -236,7 +236,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
                             "DateofBirth": selectedDate?.millisecondsSinceEpoch,
                             "profilePicNo":selectedavatarindex
                           }).then((value) {
-                            Get.snackbar('Data Updated', "Successfuly Updated",
+                            Get.snackbar('Data Updated', "Successfully Updated",
                                 colorText: Colors.black,
                                 backgroundColor: Colors.deepPurpleAccent);
                             Get.offAll(() => ScreenUserHomePage());
