@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
@@ -124,7 +125,7 @@ class _ScreenUserVideoViewState extends State<ScreenUserVideoView> {
                           size: 28.sp,
                         ),
                         Text(
-                          'Like',
+                          LocaleKeys.like.tr,
                           style: TextStyle(color: Colors.white),
                           textAlign: TextAlign.center,
                         )
@@ -146,7 +147,7 @@ class _ScreenUserVideoViewState extends State<ScreenUserVideoView> {
                           size: 28.sp,
                         ),
                         Text(
-                          'Request',
+                          LocaleKeys.request.tr,
                           style: TextStyle(color: Colors.white),
                         )
                       ],
@@ -167,7 +168,7 @@ class _ScreenUserVideoViewState extends State<ScreenUserVideoView> {
                           size: 28.sp,
                         ),
                         Text(
-                          'Share',
+                          LocaleKeys.share.tr,
                           style: TextStyle(color: Colors.white),
                         )
                       ],

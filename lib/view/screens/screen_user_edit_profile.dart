@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:custom_utils/custom_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -31,12 +32,12 @@ _pickvideo(ImageSource src, BuildContext context) async {
               Get.back();
             },
             icon: Icon(Icons.arrow_back,color: Colors.black,)),
-        title: Text('Profile',style: TextStyle(color: Colors.black),),
+        title: Text(LocaleKeys.profile.tr,style: TextStyle(color: Colors.black),),
         actions: [
           Center(
             child: InkWell(
               onTap: (){},
-              child: Text("Edit",style: TextStyle(
+              child: Text(LocaleKeys.edit.tr,style: TextStyle(
                 color: Color(0xffEB141B),
                 fontSize: 19,
                 fontWeight: FontWeight.w400
@@ -99,7 +100,7 @@ _pickvideo(ImageSource src, BuildContext context) async {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('UserName',style: TextStyle(color: Color(0xff5F5E5E),fontSize: 12,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
+                      Text(LocaleKeys.username.tr,style: TextStyle(color: Color(0xff5F5E5E),fontSize: 12,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
                     ],
                   ),
                   Container(
@@ -128,7 +129,7 @@ _pickvideo(ImageSource src, BuildContext context) async {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('Email',style: TextStyle(color: Color(0xff5F5E5E),fontSize: 12,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
+                      Text(LocaleKeys.email.tr,style: TextStyle(color: Color(0xff5F5E5E),fontSize: 12,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
                     ],
                   ),
                   Container(
@@ -157,7 +158,7 @@ _pickvideo(ImageSource src, BuildContext context) async {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('Date of Birth',style: TextStyle(color: Color(0xff5F5E5E),fontSize: 12,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
+                      Text(LocaleKeys.dateofbirth.tr,style: TextStyle(color: Color(0xff5F5E5E),fontSize: 12,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
                     ],
                   ),
                   Container(

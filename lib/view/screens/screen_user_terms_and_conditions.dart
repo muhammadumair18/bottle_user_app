@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class ScreenUserTermsAndConditions extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Terms and Conditions',
+                LocaleKeys.termsandconditions.tr,
                 style: TextStyle(color: Colors.black, fontSize: 25),
               ),
               SizedBox(height: 10,),
@@ -41,7 +42,7 @@ class ScreenUserTermsAndConditions extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'Last Update on 26 September, 2022',
+                    '${LocaleKeys.lastupdateon.tr} 26 September, 2022',
                     style:
                         TextStyle(color: Colors.black.withOpacity(.5), fontSize: 20),
                   ),

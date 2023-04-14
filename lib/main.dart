@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/view/screens/screen_user_home_page.dart';
 import 'package:bottle_user_app/view/screens/screen_user_splash.dart';
@@ -145,8 +146,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return GetMaterialApp(
+        translationsKeys: AppTranslation.translations,
+        locale: Locale('ur'),
         debugShowCheckedModeBanner: false,
-        home:FirebaseAuth.instance.currentUser?.uid != null?ScreenUserHomePage():ScreenUserSplash(),
+        home:Directionality(
+          textDirection: TextDirection.ltr,
+          child: FirebaseAuth.instance.currentUser?.uid != null?ScreenUserHomePage():ScreenUserSplash(),
+        ),
         // FirebaseAuth.instance.currentUser!=null?ScreenUserHomePage():ScreenUserSplash()
 
         theme: ThemeData(

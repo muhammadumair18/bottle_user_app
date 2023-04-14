@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/screens/screen_user_about.dart';
 import 'package:bottle_user_app/view/screens/screen_user_help.dart';
 import 'package:bottle_user_app/view/screens/screen_user_notification_settings.dart';
@@ -19,7 +20,7 @@ class ScreenUserSettings extends StatelessWidget {
               Get.back();
             },
             icon: Icon(Icons.arrow_back,color: Colors.black,)),
-        title: Text('Settings',style: TextStyle(color: Colors.black),),
+        title: Text(LocaleKeys.settiings.tr,style: TextStyle(color: Colors.black),),
       ),
       body: Column(
         children: [
@@ -35,7 +36,7 @@ class ScreenUserSettings extends StatelessWidget {
               ),
               child: Icon(Icons.notifications_none,color: Colors.black,size: 35,),
             ),
-            title: Text('Notifications Settings',style: TextStyle(
+            title: Text(LocaleKeys.notificationssettings.tr,style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 18
@@ -54,7 +55,7 @@ class ScreenUserSettings extends StatelessWidget {
               ),
               child: Icon(Icons.document_scanner_outlined,color: Colors.black,size: 35,),
             ),
-            title: Text('Terms and Conditions',style: TextStyle(
+            title: Text(LocaleKeys.termsandconditions.tr,style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 18
@@ -73,7 +74,7 @@ class ScreenUserSettings extends StatelessWidget {
               ),
               child: Icon(Icons.help_outline,color: Colors.black,size: 35,),
             ),
-            title: Text('Help',style: TextStyle(
+            title: Text(LocaleKeys.help.tr,style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,
                 fontWeight: FontWeight.bold
@@ -93,7 +94,7 @@ class ScreenUserSettings extends StatelessWidget {
               ),
               child: Icon(Icons.error_outline,color: Colors.black,size: 35,),
             ),
-            title: Text('About',style: TextStyle(
+            title: Text(LocaleKeys.about.tr,style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,
               fontWeight: FontWeight.bold

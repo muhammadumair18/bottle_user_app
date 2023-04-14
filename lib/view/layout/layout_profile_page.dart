@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/screens/screen_user_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class _LayoutProfilePageState extends State<LayoutProfilePage> {
                 width: Get.width,
                 height: Get.height * .3,
                 color: Colors.black,
-                child: Text('Profile',style: TextStyle(color: Colors.white,fontSize: 25),textAlign: TextAlign.center,),
+                child: Text(LocaleKeys.profile.tr,style: TextStyle(color: Colors.white,fontSize: 25),textAlign: TextAlign.center,),
               ),
             ),
             Positioned(
@@ -75,7 +76,7 @@ class _LayoutProfilePageState extends State<LayoutProfilePage> {
                         ),
                         child: Icon(Icons.person,color: Colors.black,size: 35,),
                       ),
-                      title: Text('Edit Profile',style: TextStyle(
+                      title: Text(LocaleKeys.editprofile.tr,style: TextStyle(
                           color: Colors.black,
                           fontSize: 18
                       ),),
@@ -92,7 +93,7 @@ class _LayoutProfilePageState extends State<LayoutProfilePage> {
                         ),
                         child: Icon(Icons.settings,color: Colors.black,size: 35,),
                       ),
-                      title: Text('Settings',style: TextStyle(
+                      title: Text(LocaleKeys.settiings.tr,style: TextStyle(
                           color: Colors.black,
                           fontSize: 18
                       ),),
@@ -110,7 +111,7 @@ class _LayoutProfilePageState extends State<LayoutProfilePage> {
                         ),
                         child: Icon(Icons.login,color: Colors.black,size: 35,),
                       ),
-                      title: Text('Logout',style: TextStyle(
+                      title: Text(LocaleKeys.logout.tr,style: TextStyle(
                           color: Colors.black,
                           fontSize: 18
                       ),),

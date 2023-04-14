@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/screens/screen_user_login.dart';
 import 'package:bottle_user_app/view/screens/screen_user_phone_verification.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -48,7 +49,7 @@ class ScreenUserSplash extends StatelessWidget {
                             borderRadius: BorderRadius.circular(22.sp)),
                         child: Center(
                             child: Text(
-                          'Login',
+                              LocaleKeys.login.tr,
                           style:
                               TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600,color: Colors.white),
                         )),
@@ -66,7 +67,7 @@ class ScreenUserSplash extends StatelessWidget {
                             borderRadius: BorderRadius.circular(22.sp)),
                         child: Center(
                             child: Text(
-                          'Signup',
+                              LocaleKeys.signup.tr,
                           style:
                               TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600,color: Colors.white),
                         )),
@@ -79,7 +80,7 @@ class ScreenUserSplash extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.error_outline,color: Colors.white,),
-                    Text(' You must be 22 years old to use this app',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 15),),
+                    Text(' ${LocaleKeys.youmustbe22yearsold.tr}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 15),),
                     SizedBox(height: 4.sp,)
                   ],
                 )

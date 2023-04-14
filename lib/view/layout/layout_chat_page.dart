@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/messgengertab.dart';
 import 'package:bottle_user_app/model/user.dart' as model;
@@ -37,7 +38,7 @@ class _LayoutChatPageState extends State<LayoutChatPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Chat',style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),
+                Text(LocaleKeys.chat.tr,style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),
                 SizedBox(height: 5,),
                 Container(
                   height: Get.height * .06,
@@ -46,7 +47,7 @@ class _LayoutChatPageState extends State<LayoutChatPage> {
                         // contentPadding: EdgeInsets.zero,
                         fillColor: Color(0xffD9D9D9),
                         filled: true,
-                        hintText: "Search",
+                        hintText: LocaleKeys.search.tr,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(32.0)),
                         ),
@@ -95,10 +96,10 @@ class _LayoutChatPageState extends State<LayoutChatPage> {
                   },
                 );
               }
-              return Center(child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 15),),);
+              return Center(child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 15),),);
             },),
           ),
-          Text('  Recent',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22),),
+          Text('  ${LocaleKeys.recent.tr}',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22),),
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream: userref.doc(FirebaseAuth.instance.currentUser!.uid).collection("messagetab").snapshots(),
@@ -121,7 +122,7 @@ class _LayoutChatPageState extends State<LayoutChatPage> {
                         },child: ItemMessageTab(Name: innervar.name,picNo: innervar.phototid,));
                       });
                 }
-                return Center(child: Text('No Data',style: TextStyle(color: Colors.red,fontSize: 15),),);
+                return Center(child: Text(LocaleKeys.nodata.tr,style: TextStyle(color: Colors.red,fontSize: 15),),);
               },
             ),
           )

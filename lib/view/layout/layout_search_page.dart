@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/layout/layout_search_map.dart';
 import 'package:bottle_user_app/view/layout/layout_search_posts.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class _LayoutSearchPageState extends State<LayoutSearchPage> {
                             decoration: InputDecoration(
                                 fillColor: Color(0xffD9D9D9),
                                 filled: true,
-                                hintText: "What are you seeing?",
+                                hintText: LocaleKeys.whatareyouseeing.tr,
                                 border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15.0)),
@@ -122,14 +123,14 @@ class _LayoutSearchPageState extends State<LayoutSearchPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "In radius",
+                        LocaleKeys.inradius.tr,
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.w600),
                       ),
                       Text(
-                        "${radiusMiles} miles",
+                        "${radiusMiles} ${LocaleKeys.miles.tr}",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w400,
@@ -176,7 +177,7 @@ class _LayoutSearchPageState extends State<LayoutSearchPage> {
                 }
                 return Expanded(
                     child: Center(
-                  child: Text('No data'),
+                  child: Text(LocaleKeys.nodata.tr),
                 ));
               })
         ],

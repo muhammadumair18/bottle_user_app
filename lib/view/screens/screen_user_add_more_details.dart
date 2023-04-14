@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/view/screens/screen_user_allow_location.dart';
 import 'package:bottle_user_app/view/screens/screen_user_home_page.dart';
@@ -65,7 +66,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          '    Add more details',
+          '    ${LocaleKeys.addmoredetails.tr}',
           style: TextStyle(color: Colors.black, fontSize: 25),
         ),
       ),
@@ -107,7 +108,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
                                   return AlertDialog(
                                     title: Center(
                                         child: Text(
-                                      'Select an Avatar',
+                                      LocaleKeys.selectanavatar.tr,
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold),
@@ -172,7 +173,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
                   },
                   controller: nameController,
                   decoration: InputDecoration(
-                    hintText: 'Username',
+                    hintText: LocaleKeys.username.tr,
                     hintStyle: TextStyle(color: Color(0xFFA0A2A8)),
                     fillColor: Color(0xFFF6F6F6),
                     filled: true,
@@ -209,7 +210,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
                         children: [
                           Text(
                             selectedDate == null
-                                ? 'Date of Birth'
+                                ? LocaleKeys.dateofbirth.tr
                                 : DateFormat.yMMMMEEEEd()
                                     .format(selectedDate!)
                                     .toString(),
@@ -241,7 +242,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
                                 backgroundColor: Colors.deepPurpleAccent);
                             Get.offAll(() => ScreenUserHomePage());
                           }).onError((error, stackTrace) {
-                            Get.snackbar('Signup Error', error.toString(),
+                            Get.snackbar(LocaleKeys.signuperror.tr, error.toString(),
                                 colorText: Colors.black,
                                 backgroundColor: Colors.deepPurpleAccent);
                           });
@@ -261,7 +262,7 @@ class _ScreenUserAddMoreDetailsState extends State<ScreenUserAddMoreDetails> {
                               borderRadius: BorderRadius.circular(20.sp),
                               color: Colors.black),
                           child: Text(
-                            'Finish',
+                            LocaleKeys.finish.tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18.sp,

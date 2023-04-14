@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/view/screens/screen_user_otp_verification.dart';
 import 'package:country_code_picker/country_code_picker.dart';
@@ -38,7 +39,7 @@ class _ScreenUserPhoneVerificationState
           ),
         ),
         title: Text(
-          'Signup',
+          LocaleKeys.signup.tr,
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -68,14 +69,14 @@ class _ScreenUserPhoneVerificationState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Add your phone number we will send you a',
+                      LocaleKeys.addyourphonenumberwewill.tr,
                       style: TextStyle(
                           color: Color(0xff353535),
                           fontWeight: FontWeight.w400,
                           fontSize: 14.sp),
                     ),
                     Text(
-                      'verification code we know you are real.',
+                      LocaleKeys.verificationcodeweknow.tr,
                       style: TextStyle(
                           color: Color(0xff353535),
                           fontWeight: FontWeight.w400,
@@ -107,7 +108,7 @@ class _ScreenUserPhoneVerificationState
                     },
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(fillColor: Colors.white,filled: true,
-                        hintText: "Enter Number",
+                        hintText: LocaleKeys.enternumber.tr,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(32.0)),
                         ),
@@ -133,8 +134,8 @@ class _ScreenUserPhoneVerificationState
                     child: CheckboxListTile(
                       title: Row(
                         children: [
-                          Text('Agree with ',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.w400),),
-                          Text('Terms and Conditions',style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w400),),
+                          Text('${LocaleKeys.agreewith.tr} ',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.w400),),
+                          Text(LocaleKeys.termsandconditions.tr,style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w400),),
                         ],
                       ),
                       value: agreetoterms,
@@ -152,7 +153,7 @@ class _ScreenUserPhoneVerificationState
                   child: GestureDetector(onTap: (){
                     if(phnumber.length<10)
                       {
-                        Get.snackbar('Invalid Number', 'Please Enter a valid phone number.',backgroundColor: Colors.red,colorText: Colors.black);
+                        Get.snackbar(LocaleKeys.invalidnumber.tr, LocaleKeys.pleaseentervalidphonenumber.tr,backgroundColor: Colors.red,colorText: Colors.black);
                       }
                     else{
                       var phveruser=inituser();
@@ -172,7 +173,7 @@ class _ScreenUserPhoneVerificationState
                           borderRadius: BorderRadius.circular(20.sp),
                           color: Colors.black),
                       child: Text(
-                        'Send OTP',
+                        LocaleKeys.sendotp.tr,
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18.sp,

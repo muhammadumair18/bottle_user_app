@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:custom_utils/custom_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -19,7 +20,7 @@ class ScreenUserAbout extends StatelessWidget {
               Icons.arrow_back_ios,
               color: Colors.black,
             )),
-        title: Text('About',style: TextStyle(color: Colors.black),),
+        title: Text(LocaleKeys.about.tr,style: TextStyle(color: Colors.black),),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -39,12 +40,12 @@ class ScreenUserAbout extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20.0,right: 20,top: 20),
               child: Align(alignment: Alignment.center,
-                child: Text("Help protect your website and its users with clear "
+                child: Text("${LocaleKeys.helpprotectyourwebside.tr} "
                 ),
               ),
             ),
             Align(alignment: Alignment.center,
-              child: Text("and fair website terms and conditions."
+              child: Text(LocaleKeys.andfairwebsite.tr
               ),
             ),
             Container(
@@ -54,18 +55,18 @@ class ScreenUserAbout extends StatelessWidget {
                 children: [
                   SizedBox(height: 4.h,),
 
-                  Text("Version",style: normal_h2Style_bold,),
+                  Text(LocaleKeys.version.tr,style: normal_h2Style_bold,),
                   SizedBox(height: 10,),
                   Text("2.1.0"),
                   SizedBox(height: 10,),
 
-                  Text("Powered by",style: normal_h2Style_bold,),
+                  Text(LocaleKeys.poweredby.tr,style: normal_h2Style_bold,),
                   SizedBox(height: 10,),
 
                   Text("Share Bottle"),
                   SizedBox(height: 10,),
 
-                  Text("Contact us",style: normal_h2Style_bold,),
+                  Text(LocaleKeys.contactus.tr,style: normal_h2Style_bold,),
                 ],),
             ),
             SizedBox(height: 2.h,),
@@ -77,7 +78,7 @@ class ScreenUserAbout extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text('We Are Available on',style: TextStyle(color: Colors.black,fontSize: 25),),
+                      Text(LocaleKeys.weareavailableon.tr,style: TextStyle(color: Colors.black,fontSize: 25),),
                     ],
                   ),
                   SizedBox(height: 8,),

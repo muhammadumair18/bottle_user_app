@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/messaagdetails.dart';
 import 'package:bottle_user_app/view/layout/item_chat_message.dart';
@@ -82,7 +83,7 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
                       if(!snapshots.hasData||snapshots.connectionState==ConnectionState.waiting)
                       {
                         return Center(
-                          child: Text('Loading or No data available......',style: TextStyle(color: Colors.red,fontSize: 20),),
+                          child: Text(LocaleKeys.loadingornodata.tr,style: TextStyle(color: Colors.red,fontSize: 20),),
                         );
                       }
                       var innerdata=snapshots.data!.docs.map((e) => messaagdetails.fromMap(e.data() as Map<String,dynamic>)).toList();
@@ -146,7 +147,7 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
                       contentPadding: EdgeInsets.symmetric(horizontal: 25),
                       fillColor: Color(0xffD9D9D9),
                       filled: true,
-                      hintText: "Enter Message",
+                      hintText: LocaleKeys.entermessage.tr,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       ),
@@ -182,7 +183,7 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(6)),
                       child: Text(
-                        'Send',
+                        LocaleKeys.send.tr,
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                     ),

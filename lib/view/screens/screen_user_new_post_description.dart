@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/posts.dart';
 import 'package:bottle_user_app/view/screens/screen_user_home_page.dart';
@@ -76,7 +77,7 @@ class _ScreenUserNewPostDescriptionState
                 color: Colors.black,
               )),
           title: Text(
-            'New Story',
+            LocaleKeys.newstory.tr,
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -97,7 +98,7 @@ class _ScreenUserNewPostDescriptionState
                     description=value.toString();
                   },
                     isPasswordField: false,
-                    hint: 'Mention Here',
+                    hint: LocaleKeys.mentionhere.tr,
                     maxLines: 2,
                     limit: 25,
                   )),
@@ -112,7 +113,7 @@ class _ScreenUserNewPostDescriptionState
                     responce=await _uploadPost(LatLng(myPosition.latitude, myPosition.longitude));
                     if(responce=="success"){
                       Get.offAll(ScreenUserHomePage());
-                      Get.snackbar('Uploaded', "The video has been successfully uploaded");
+                      Get.snackbar(LocaleKeys.uploaded.tr, LocaleKeys.thevideouploadedsuccessfully);
                     }else{
                       Get.offAll(ScreenUserHomePage());
                       Get.snackbar("error", responce);
@@ -120,7 +121,7 @@ class _ScreenUserNewPostDescriptionState
                     isloading=false;
                   }
                   else{
-                    Get.snackbar('Location Error', 'Please turn on your location to upload video',
+                    Get.snackbar(LocaleKeys.locationerror.tr, LocaleKeys.pleaseturnonyourlocationto.tr,
                         colorText: Colors.red,backgroundColor: Colors.amber);
                   }
 
@@ -132,7 +133,7 @@ class _ScreenUserNewPostDescriptionState
                   padding:
                       EdgeInsets.symmetric(vertical: 5.sp, horizontal: 65.sp),
                   child: Text(
-                    'Publish',
+                    LocaleKeys.publish.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.sp,

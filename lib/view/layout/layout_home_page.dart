@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/posts.dart';
 import 'package:bottle_user_app/model/user.dart' as model;
@@ -52,7 +53,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                           contentPadding: EdgeInsets.symmetric(vertical: 1),
                           fillColor: Color(0xffD9D9D9),
                           filled: true,
-                          hintText: "What are you seeing?",
+                          hintText: LocaleKeys.whatareyouseeing.tr,
                           border: OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(32.0)),
@@ -87,7 +88,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                     // print(value);
                     await callOnFcmApiSendPushNotifications(title: 'Hello', body: 'Body');
                     Get.snackbar(
-                        'Notifications', 'There are no notifications available',
+                        LocaleKeys.notifications.tr, LocaleKeys.therearenonotificationsavailable.tr,
                         backgroundColor: Colors.black54,
                         colorText: Colors.white);
                   },
@@ -179,7 +180,7 @@ class _LayoutHomePageState extends State<LayoutHomePage> {
                           ),
                           child: Center(
                               child: Text(
-                            'No Data Available',
+                                LocaleKeys.nodataavailable.tr,
                             style: TextStyle(color: Colors.red, fontSize: 20),
                           )),
                         );

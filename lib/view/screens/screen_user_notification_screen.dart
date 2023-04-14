@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/layout/item_user_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,7 @@ class _ScreenUserNotificationScreenState
               Icons.arrow_back_ios,
               color: Colors.black,
             )),
-        title: Text('Notifications',style: TextStyle(color: Colors.black),),
+        title: Text(LocaleKeys.notifications.tr,style: TextStyle(color: Colors.black),),
       ),
       body: ListView.builder(itemCount: 25,itemBuilder: (BuildContext context,int index){
         return ItemUserNotification(notificationTitle: 'Chat', notificationDescription: 'Jack just send you a message');

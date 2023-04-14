@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/messgengertab.dart';
 import 'package:bottle_user_app/view/layout/item_video_view.dart';
@@ -81,7 +82,7 @@ class _ItemHomePagePostsState extends State<ItemHomePagePosts> {
                         InkWell(
                             onTap: () {},
                             child: Text(
-                              'Follow',
+                              LocaleKeys.follow.tr,
                               style: TextStyle(
                                   color: Colors.black, fontSize: 17),
                             )),
@@ -163,7 +164,7 @@ class _ItemHomePagePostsState extends State<ItemHomePagePosts> {
           ],
         );
       }
-      return Text('No data',style: TextStyle(color: Colors.red,fontSize: 12),);
+      return Text(LocaleKeys.nodata.tr,style: TextStyle(color: Colors.red,fontSize: 12),);
 
     });
   }

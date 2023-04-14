@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/layout/layout_chat_page.dart';
 import 'package:bottle_user_app/view/layout/layout_home_page.dart';
 import 'package:bottle_user_app/view/layout/layout_profile_page.dart';
@@ -60,7 +61,7 @@ class _ScreenUserHomePageState extends State<ScreenUserHomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.home,color: Colors.black,),
-                    Container(child: selectedPage==0 ? Text('Home',
+                    Container(child: selectedPage==0 ? Text(LocaleKeys.home.tr,
                       style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
                   ],
                 ),
@@ -72,7 +73,7 @@ class _ScreenUserHomePageState extends State<ScreenUserHomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.search,color: Colors.black,),
-                    Container(child: selectedPage==1 ? Text('Search',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
+                    Container(child: selectedPage==1 ? Text(LocaleKeys.search.tr,style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
 
                   ],
                 ),
@@ -85,7 +86,7 @@ class _ScreenUserHomePageState extends State<ScreenUserHomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.chat,color: Colors.black,),
-                    Container(child: selectedPage==2 ? Text('Chat',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
+                    Container(child: selectedPage==2 ? Text(LocaleKeys.chat.tr,style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
 
                   ],
                 ),
@@ -97,7 +98,7 @@ class _ScreenUserHomePageState extends State<ScreenUserHomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.person,color: Colors.black,),
-                    Container(child: selectedPage==3 ? Text('Profile',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
+                    Container(child: selectedPage==3 ? Text(LocaleKeys.profile.tr,style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 12),):null,)
 
                   ],
                 ),

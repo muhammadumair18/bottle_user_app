@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/view/screens/screen_user_otp_verification.dart';
 import 'package:bottle_user_app/view/screens/screen_user_phone_verification.dart';
@@ -36,7 +37,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                     child: Row(
                       children: [
                         Text(
-                          'Login',
+                          LocaleKeys.login.tr,
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 25.sp,
@@ -56,7 +57,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                     height: 25.sp,
                   ),
                   Text(
-                    'Welcome Back',
+                    LocaleKeys.welcomeback.tr,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.sp,
@@ -86,7 +87,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                       },
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(fillColor: Colors.white,filled: true,
-                          hintText: "Enter phone Number",
+                          hintText: LocaleKeys.enterphonenumber.tr,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(32.0)),
                           ),
@@ -113,11 +114,11 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                   GestureDetector(onTap: (){
                     var user=inituser();
                     if(phnumber.isEmpty){
-                      Get.snackbar("Phone Number", 'The phone number is empty',backgroundColor: Colors.red,colorText: Colors.black);
+                      Get.snackbar(LocaleKeys.phonenumber.tr, LocaleKeys.thephonenumberisempty.tr,backgroundColor: Colors.red,colorText: Colors.black);
                       return;
                     }
                     if(phnumber.length>10 || phnumber.length<10){
-                      Get.snackbar('Invalid', 'Please enter a valid phone number.',backgroundColor: Colors.red,colorText: Colors.black);
+                      Get.snackbar(LocaleKeys.invalidnumber.tr, LocaleKeys.pleaseentervalidphonenumber.tr,backgroundColor: Colors.red,colorText: Colors.black);
                       return;
                     }
                     Get.to(ScreenUserOtpVerification(
@@ -133,7 +134,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
 
                       ),
                       child: Text(
-                        'Login',
+                        LocaleKeys.login.tr,
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18.sp,
@@ -156,7 +157,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                         SizedBox(
                           width: 2.sp,
                         ),
-                        Text('or'),
+                        Text(LocaleKeys.or.tr),
                         SizedBox(
                           width: 2.sp,
                         ),
@@ -201,13 +202,13 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                     children: [
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('Don\'t have an account ')),
+                          child: Text('${LocaleKeys.donthaveanaccount.tr} ')),
                       // VerticalDivider(thickness: 2,color: Colors.grey,),
                       InkWell(onTap: (){
                         Get.to(ScreenUserPhoneVerification());
                       },
                         child: Text(
-                          'Signup',
+                          LocaleKeys.signup.tr,
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),

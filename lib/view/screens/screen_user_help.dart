@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
               Get.back();
             },
             icon: Icon(Icons.arrow_back,color: Colors.black,)),
-        title: Text('Help',style: TextStyle(color: Colors.black),),
+        title: Text(LocaleKeys.help.tr,style: TextStyle(color: Colors.black),),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -39,7 +40,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                 ),
                 child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Contact us',style: TextStyle(
+                    Text(LocaleKeys.contactus.tr,style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.sp,
                       // fontWeight: FontWeight.bold
@@ -48,7 +49,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                         decoration: InputDecoration(
                             // fillColor: Color(0xffD9D9D9),
                             filled: true,
-                            hintText: "Your Name",
+                            hintText: LocaleKeys.yourname.tr,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(12.0)),
                             ),
@@ -67,7 +68,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                         decoration: InputDecoration(
                           // fillColor: Color(0xffD9D9D9),
                           filled: true,
-                          hintText: "Your Contact Number",
+                          hintText: LocaleKeys.yourcontactnumber.tr,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(12.0)),
                           ),
@@ -86,7 +87,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                         decoration: InputDecoration(
                           // fillColor: Color(0xffD9D9D9),
                           filled: true,
-                          hintText: "Your Email",
+                          hintText: LocaleKeys.youremail.tr,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(12.0)),
                           ),
@@ -105,7 +106,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                         decoration: InputDecoration(
                           // fillColor: Color(0xffD9D9D9),
                           filled: true,
-                          hintText: "Description",
+                          hintText: LocaleKeys.description.tr,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(12.0)),
                           ),
@@ -127,7 +128,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                       padding:
                       EdgeInsets.symmetric(vertical: 5.sp, horizontal: Get.width/7),
                       child: Text(
-                        'Send',
+                        LocaleKeys.send.tr,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 18.sp,
@@ -143,7 +144,7 @@ class _ScreenUserHelpState extends State<ScreenUserHelp> {
                 children: [
                   Row(
                     children: [
-                      Text('We Are Available on',style: TextStyle(color: Colors.black,fontSize: 25),),
+                      Text(LocaleKeys.weareavailableon.tr,style: TextStyle(color: Colors.black,fontSize: 25),),
                     ],
                   ),
                   SizedBox(height: 8,),

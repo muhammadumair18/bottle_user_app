@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
@@ -25,7 +26,7 @@ class _ScreenUserNotificationSettingsState
                 Get.back();
               },
               icon: Icon(Icons.arrow_back,color: Colors.black,)),
-          title: Text('Notification Settings',style: TextStyle(color: Colors.black),),
+          title: Text(LocaleKeys.notificationssettings.tr,style: TextStyle(color: Colors.black),),
         ),
       body: Theme(
         data: ThemeData(
@@ -35,19 +36,19 @@ class _ScreenUserNotificationSettingsState
         child: Column(
           children: [
             SizedBox(height: 7.sp,),
-            SwitchListTile(activeColor: Colors.green,title: Text('All Notifications',style: TextStyle(color: Colors.black,fontSize: 23),),value: allNotifications, onChanged: (nvalue){
+            SwitchListTile(activeColor: Colors.green,title: Text(LocaleKeys.allnotifications.tr,style: TextStyle(color: Colors.black,fontSize: 23),),value: allNotifications, onChanged: (nvalue){
               setState(() {
                 allNotifications=nvalue;
               });
             }),
             Divider(color: Colors.grey.withOpacity(0.5),thickness: 0.5,),
-            SwitchListTile(activeColor: Colors.green,title: Text('Post Notifications',style: TextStyle(color: Colors.black,fontSize: 23),),value: postNotifications, onChanged: (nvalue){
+            SwitchListTile(activeColor: Colors.green,title: Text(LocaleKeys.postnotifications.tr,style: TextStyle(color: Colors.black,fontSize: 23),),value: postNotifications, onChanged: (nvalue){
               setState(() {
                 postNotifications=nvalue;
               });
             }),
             Divider(color: Colors.grey.withOpacity(0.5),thickness: 0.5,),
-            SwitchListTile(activeColor: Colors.green,title: Text('Chat Notifications',style: TextStyle(color: Colors.black,fontSize: 23),),value: chatNotifications, onChanged: (nvalue){
+            SwitchListTile(activeColor: Colors.green,title: Text(LocaleKeys.chatnotifications.tr,style: TextStyle(color: Colors.black,fontSize: 23),),value: chatNotifications, onChanged: (nvalue){
               setState(() {
                 chatNotifications=nvalue;
               });

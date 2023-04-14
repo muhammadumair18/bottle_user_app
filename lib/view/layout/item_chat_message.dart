@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:custom_utils/custom_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,7 +52,7 @@ class ItemChatMessage extends StatelessWidget {
                   height: 4,
                 ),
                 Text(
-                  '${time} ago',
+                  '${time} ${LocaleKeys.ago.tr}',
                   style: TextStyle(
                       color: mySelf?Colors.white:Colors.black,
                       fontSize: 8.sp,

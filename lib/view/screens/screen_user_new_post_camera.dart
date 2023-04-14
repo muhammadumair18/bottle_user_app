@@ -1,8 +1,4 @@
-
 import 'dart:async';
-import 'dart:io';
-import 'dart:math' as math;
-
 import 'package:bottle_user_app/controller/controller_video_controller.dart';
 import 'package:bottle_user_app/view/screens/screen_user_new_post_description.dart';
 import 'package:camera/camera.dart';

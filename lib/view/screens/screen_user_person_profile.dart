@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/model/posts.dart';
 import 'package:bottle_user_app/view/layout/item_video_view.dart';
@@ -103,7 +104,7 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
                             child: Row(
                               children: [
                                 Icon(Icons.add,color: Colors.white,),
-                                Text('Follow',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w500),)
+                                Text(LocaleKeys.follow.tr,style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w500),)
                               ],
                             ),
                           )
@@ -174,7 +175,7 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
                                               InkWell(
                                                   onTap: () {},
                                                   child: Text(
-                                                    'Follow',
+                                                    LocaleKeys.follow.tr,
                                                     style: TextStyle(
                                                         color: Colors.black, fontSize: 17),
                                                   )),
@@ -241,14 +242,14 @@ class _ScreenUserPersonProfileState extends State<ScreenUserPersonProfile> {
                               );
                             });
                       }
-                      return Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 15),);
+                      return Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 15),);
                     },),
                   ),
                 )
               ],
             );
           }
-        return Center(child: Text('No Data Available',style: TextStyle(color: Colors.red,fontSize: 20),),);
+        return Center(child: Text(LocaleKeys.nodataavailable.tr,style: TextStyle(color: Colors.red,fontSize: 20),),);
       },),
     );
   }

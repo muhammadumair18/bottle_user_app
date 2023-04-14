@@ -1,4 +1,5 @@
 import 'package:bottle_user_app/controller/controller_user_registration_otp.dart';
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/view/screens/screen_user_add_more_details.dart';
 import 'package:custom_utils/custom_utils.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class _ScreenUserOtpVerificationState extends State<ScreenUserOtpVerification> {
                             AssetImage(
                                 'assets/images/otp_verification_logo.png'))),
                     Text(
-                      'Verification',
+                      LocaleKeys.verification.tr,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 24,
@@ -59,7 +60,7 @@ class _ScreenUserOtpVerificationState extends State<ScreenUserOtpVerification> {
                       height: 8,
                     ),
                     Text(
-                      'Enter the OTP code send to your screen',
+                      LocaleKeys.entertheotpcode.tr,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 13.sp,
@@ -82,11 +83,11 @@ class _ScreenUserOtpVerificationState extends State<ScreenUserOtpVerification> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         // crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('Did Not receive a code?', style: TextStyle(
+                          Text(LocaleKeys.didnotrecieveacode.tr, style: TextStyle(
                               fontWeight: FontWeight.w600, fontSize: 18),),
                           SizedBox(height: Get.height * 0.01,),
                           GestureDetector(onTap: () {},
-                              child: Text('RESEND', style: TextStyle(
+                              child: Text(LocaleKeys.resend.tr, style: TextStyle(
                                   fontWeight: FontWeight.w700, fontSize: 18),)),
                           SizedBox(height: Get.height * 0.07,),
                           Obx(() {
@@ -112,7 +113,7 @@ class _ScreenUserOtpVerificationState extends State<ScreenUserOtpVerification> {
                                             20.sp),
                                         color: Colors.black),
                                     child: Text(
-                                      'Done',
+                                      LocaleKeys.done.tr,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 18.sp,
@@ -141,7 +142,7 @@ class _ScreenUserOtpVerificationState extends State<ScreenUserOtpVerification> {
                           }),
                           SizedBox(height: Get.height * 0.07,),
                           GestureDetector(onTap: () {},
-                              child: Text('Change Phone Number?',
+                              child: Text(LocaleKeys.changephonenumber.tr,
                                 style: TextStyle(color: Colors.blue,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15),)),

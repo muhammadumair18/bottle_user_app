@@ -1,3 +1,4 @@
+import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -34,10 +35,10 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Allow Share Bottle to",
+                      LocaleKeys.allowsharebottleto.tr,
                     ),
                     Text(
-                      "use your location",
+                      LocaleKeys.useyourlocation.tr,
                     ),
                   ],
                 ),
@@ -45,13 +46,13 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "This app requires access to your",
+                      LocaleKeys.thisapprequiresaccessto.tr,
                     ),
                     Text(
-                      "location to match with the nearest",
+                      LocaleKeys.locationtomatchwith.tr,
                     ),
                     Text(
-                      "Clubs",
+                      LocaleKeys.clubs.tr,
                     ),
                   ],
                 ),
@@ -73,7 +74,7 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                         borderRadius: BorderRadius.circular(20.sp),
                         color: Colors.black),
                     child: Text(
-                      'Allow',
+                      LocaleKeys.allow.tr,
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 17.sp,
@@ -92,7 +93,7 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                         border: Border.all(width: 1.sp, color: Colors.black),
                         color: Colors.white),
                     child: Text(
-                      'Allow While using app',
+                      LocaleKeys.allowwhileusingapp.tr,
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 12.sp,
@@ -111,7 +112,7 @@ class _ScreenUserAllowLocationState extends State<ScreenUserAllowLocation> {
                         border: Border.all(width: 1.sp, color: Colors.black),
                         color: Colors.white),
                     child: Text(
-                      'Don\'t Allow',
+                      LocaleKeys.dontallow.tr,
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 14.sp,
