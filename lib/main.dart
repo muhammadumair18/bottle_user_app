@@ -148,7 +148,7 @@ class _MyAppState extends State<MyApp> {
       return GetMaterialApp(
         translationsKeys: AppTranslation.translations,
 
-        locale: Locale('ur'),
+        locale: Locale('en'),
         debugShowCheckedModeBanner: false,
         home:Directionality(
           textDirection: TextDirection.ltr,

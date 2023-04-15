@@ -112,3 +112,7 @@ class ControllerUserRegistrationOtp extends GetxController {
 
 
 }
+
+
+// firebase_core-1.24.0/lib/src/firebase_app.dart:18:25: Error: Member not found: 'FirebaseAppPlatform.verifyExtends'.
+// FirebaseAppPlatform.verifyExtends(_delegate);

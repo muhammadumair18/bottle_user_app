@@ -4,7 +4,7 @@ import 'package:bottle_user_app/model/posts.dart';
 import 'package:bottle_user_app/view/layout/item_video_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' ;
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:bottle_user_app/model/user.dart' as model;

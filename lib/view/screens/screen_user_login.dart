@@ -2,11 +2,12 @@ import 'package:bottle_user_app/generated/locales.g.dart';
 import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/view/screens/screen_user_otp_verification.dart';
 import 'package:bottle_user_app/view/screens/screen_user_phone_verification.dart';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:country_picker/country_picker.dart';
+
 
 class ScreenUserLogin extends StatefulWidget {
   @override
@@ -35,6 +36,7 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                       left: 25,
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           LocaleKeys.login.tr,
@@ -99,13 +101,26 @@ class _ScreenUserLoginState extends State<ScreenUserLogin> {
                             borderSide: BorderSide(color: Colors.white, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(32.0)),
                           ),
-                          prefixIcon: CountryCodePicker(
-                            initialSelection: 'PK',
-                            onChanged: (value) {
-                              contrycode = value.dialCode.toString();
-                              print(contrycode);
+                          prefixIcon: InkWell(
+                            onTap: (){
+                              showCountryPicker(
+                                  context: context,
+                                  onSelect: (Country value) {
+                                    contrycode = value.phoneCode.toString();
+                                    value.phoneCode.toString();
+                                    print(value.phoneCode.toString());
+                                      print(contrycode);
+                                  });
                             },
-                          )),
+                              child: Icon(Icons.map))
+                          // CountryCodePicker(
+                          //   initialSelection: 'PK',
+                          //   onChanged: (value) {
+                          //     contrycode = value.dialCode.toString();
+                          //     print(contrycode);
+                          //   },
+                          // )
+                      ),
                     ),
                   ),
                   SizedBox(
