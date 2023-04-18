@@ -64,6 +64,8 @@ class ControllerUserRegistrationOtp extends GetxController {
           Get.snackbar('Verification Failed', e.toString(),
               colorText: Colors.black,
               backgroundColor: Colors.deepPurpleAccent);
+          Get.back();
+          print(e);
         },
         codeSent: (String verificationID, int? resendToken) {
           _verificationid = verificationID;

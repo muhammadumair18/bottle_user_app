@@ -1,7 +1,9 @@
 import 'package:bottle_user_app/generated/locales.g.dart';
+import 'package:bottle_user_app/helpers/helpers.dart';
 import 'package:bottle_user_app/view/screens/screen_user_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 import 'package:location/location.dart' as loc;
 import '../screens/screen_user_edit_profile.dart';
@@ -98,6 +100,34 @@ class _LayoutProfilePageState extends State<LayoutProfilePage> {
                           fontSize: 18
                       ),),
                       trailing: Icon(Icons.arrow_forward_ios),
+                    ),
+                    SizedBox(height: Get.height * .01,),
+                    ListTile(onTap: (){
+
+                    },
+                      leading: Container(
+                        padding: EdgeInsets.symmetric(vertical: 2,horizontal: 2),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.3)
+                        ),
+                        child: Icon(Icons.language,color: Colors.black,size: 35,),
+                      ),
+                      title: Text("Change Language",style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18
+                      ),),
+                      trailing: Switch(
+                        value: englishlanguage,
+                        activeColor: Colors.grey,
+                        activeTrackColor: Colors.orange.withOpacity(0.7),
+                        onChanged: (bool value) {
+                          setState(() {
+                            englishlanguage=value;
+                          });
+                          Phoenix.rebirth(context);
+                        },
+
+                      ),
                     ),
                     SizedBox(height: Get.height * .01,),
                     ListTile(onTap: (){

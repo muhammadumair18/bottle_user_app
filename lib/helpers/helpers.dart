@@ -9,6 +9,7 @@ CollectionReference userref = FirebaseFirestore.instance.collection('users');
 CollectionReference postref=FirebaseFirestore.instance.collection('posts');
 String registraiontokenformessaging='';
 List<String> ChoicesofMenu=["Fund","SignOut","SignIn"];
+bool englishlanguage=true;
 
 
 void choiceAction(String choice){

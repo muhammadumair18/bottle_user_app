@@ -8,6 +8,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:camera/camera.dart';
@@ -61,7 +62,7 @@ void main() async{
     sound: true,
   );
   print('registraiontokenformessaging       ${registraiontokenformessaging}');
-  runApp(const MyApp());
+  runApp(Phoenix(child: const MyApp()));
 
   cameras = await availableCameras();
   String? gettingtoken = await FirebaseMessaging.instance.getToken();
@@ -148,7 +149,7 @@ class _MyAppState extends State<MyApp> {
       return GetMaterialApp(
         translationsKeys: AppTranslation.translations,
 
-        locale: Locale('en'),
+        locale: englishlanguage==true?Locale('en'):Locale('ur'),
         debugShowCheckedModeBanner: false,
         home:Directionality(
           textDirection: TextDirection.ltr,
