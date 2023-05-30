@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class ScreenUserChatScreen extends StatefulWidget {
 
@@ -24,6 +25,39 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
   TextEditingController messageSendController = TextEditingController();
 
   String messageText='';
+
+
+
+
+  // On LongPress of Message
+  void longPressAlertDialog(int deletingID,String toWhomChatIs) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+            content: Container(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    onTap: () async{
+                      Navigator.pop(context);
+
+                    },
+                    title: Text("Delete",style: TextStyle(color: Colors.black,fontSize: 12.sp),),
+                  ),
+                  ListTile(
+                    title: Text("Message Info",style: TextStyle(color: Colors.black,fontSize: 12.sp),),
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +124,14 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
                       return ListView.builder(scrollDirection: Axis.vertical,shrinkWrap: true,itemCount: innerdata.length,itemBuilder: (context,index){
                         var innervar=innerdata[index];
 
-                        return ItemChatMessage(mySelf: FirebaseAuth.instance.currentUser!.uid==innervar.senderId, message: innervar.messagebody, time: "${DateTime.now()}");
+                        return ItemChatMessage(
+                            mySelf: FirebaseAuth.instance.currentUser!.uid==innervar.senderId,
+                            message: innervar.messagebody,
+                            time: "${DateTime.now()}",
+                            onSingleMessageClick: () {
+                              longPressAlertDialog(int.parse(innervar.selfDocId),innervar.senderId);
+                            },
+                        );
                       });
                     }),
                     // Row(
@@ -206,8 +247,6 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
 
 
   Future<void> _generateMessage() async{
-    var messege=await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).collection("messagetab").doc(widget.toWhomChat).collection('messagedetails').get();
-    int length=messege.docs.length;
     if(messageText.isEmpty)
       {
         Get.snackbar('Warning', 'No text has been written.',
@@ -215,10 +254,20 @@ class _ScreenUserChatScreenState extends State<ScreenUserChatScreen> {
             backgroundColor: Colors.deepPurpleAccent);
       }
     else{
-      int date=DateTime.now().microsecondsSinceEpoch;
-      messaagdetails mess=messaagdetails(senderId: FirebaseAuth.instance.currentUser!.uid, messagebody: messageText, sendtime: date);
-      await userref.doc(FirebaseAuth.instance.currentUser!.uid).collection("messagetab").doc(widget.toWhomChat).collection('messagedetails').doc('message ${length}').set(mess.toMap());
-      await userref.doc(widget.toWhomChat).collection("messagetab").doc(FirebaseAuth.instance.currentUser!.uid).collection('messagedetails').doc('message ${length}').set(mess.toMap());
+      int datefrommilli=DateTime.now().millisecondsSinceEpoch;
+      messaagdetails mess=messaagdetails(senderId: FirebaseAuth.instance.currentUser!.uid,
+          messagebody: messageText,
+          sendtime: datefrommilli,
+          selfDocId: '');
+      await userref.doc(FirebaseAuth.instance.currentUser!.uid).
+      collection("messagetab").doc(widget.toWhomChat).
+      collection('messagedetails').doc(datefrommilli.toString()).
+      set(mess.toMap());
+
+      await userref.doc(widget.toWhomChat).
+      collection("messagetab").doc(FirebaseAuth.instance.currentUser!.uid).
+      collection('messagedetails').doc(datefrommilli.toString()).
+      set(mess.toMap());
     }
 
   }

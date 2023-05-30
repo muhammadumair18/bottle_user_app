@@ -1,5 +1,6 @@
 import 'package:bottle_user_app/model/user.dart' as model;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:location/location.dart' as loc;
@@ -10,6 +11,16 @@ CollectionReference postref=FirebaseFirestore.instance.collection('posts');
 String registraiontokenformessaging='';
 List<String> ChoicesofMenu=["Fund","SignOut","SignIn"];
 bool englishlanguage=true;
+
+
+void customBottomSnackbar(BuildContext screencontext,String message){
+  ScaffoldMessenger.of(screencontext).showSnackBar(SnackBar(
+    content: Text(message,style: TextStyle(color: Colors.black),),
+    backgroundColor: Colors.orange,
+    behavior: SnackBarBehavior.floating,
+    duration: Duration(milliseconds: 2000),
+  ));
+}
 
 
 void choiceAction(String choice){

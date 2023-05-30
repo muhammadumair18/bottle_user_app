@@ -172,7 +172,7 @@ class _LayoutSearchPageState extends State<LayoutSearchPage> {
                   ));
                 }
                 if (snapshot.data == true) {
-                  print("Snapshot data si sisis    ${snapshot.data}");
+                  print("Snapshot data is    ${snapshot.data}");
                   return Expanded(child: location?LayoutSearchMap(betweenRange: radiusMiles,):LayoutSearchPosts(betweenRange: radiusMiles,));
                 }
                 return Expanded(
